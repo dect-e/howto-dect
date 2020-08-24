@@ -19,7 +19,7 @@ Think for a few moments whether you really want to go through with this, or if
 you already have plenty of other side-projects to occupy your time. Then,
 probably, read on. ;)
 
-## What is SIP-DECT?
+## Glossary: What is SIP-DECT?
 
 Just to recap:
 
@@ -64,3 +64,59 @@ come across:
   are available only in the web interface, or only in the *OMP*.  
   *You might use this for the inital installation, and occasionally for
   administrative tasks afterwards.*
+
+## Hardware: RFP generations
+
+The SIP-DECT RFP hardware exists in several feature classes and has gone
+through several years of development. The model numbers that arise from this
+are, shall we say, *creative*.
+
+The naming follows the schema "RFP <number> <IP|WLAN>".  
+"IP" models can only act as a DECT base station; "WLAN" models can provide both
+DECT base station and WiFi access point service at the same time. Both DECT and
+WiFi functionality can be enabled/disabled in the configuration.
+
+RFPs exist in indoor and outdoor variants (easily distinguished by their smooth
+vs rugged case).  
+Do not use an indoor variant outdoors; its circuit board will corrode, which is
+generally a bad thing.
+
+### Model overview
+
+Let's look at an overview (as of the release of SIP-DECT v8.0):
+
+|                | indoor, 4 speech channels | indoor, 8 speech channels                  | outdoor, 8 speech channels        | identification characteristic      |
+|----------------|---------------------------|--------------------------------------------|-----------------------------------|------------------------------------|
+| 2nd generation |                           | 32 IP, 42 WLAN                             | 34 IP                             | smooth edges, no USB port          |
+| 3rd generation |                           | [35 IP][rfp35ip], 43 WLAN                  | 36 IP (PoE-only), 37 IP (ext-ant) | smooth edges, has a USB port       |
+| 4th generation | 44 IP                     | [45 IP][rfp45ip], 47 IP (ext-ant), 48 WLAN | 47 IP DRC (ext-ant)               | "modern" angular look, no USB port |
+
+(PoE-only): power only via PoE, no RJ11 power input  
+(ext-any): external antenna connector, no internal DECT antenna
+
+[rfp35ip]: https://www.telefonanlage-shop.de/Aastra-EOL-END-OF-LIFE-TK-Systeme-DECT-Systeme-244/Aastra-RFP-35-IP-indoor-709#link_3
+[rfp45ip]: https://www.telefonanlage-shop.de/Aastra-DECT-Systeme-SIP-DECT-RFP-62/Mitel-RFP-45-IP-indoor-2221#link_3
+
+### Power
+
+Gen 2 and 3 RFP can be powered via Power-over-Ethernet or via an RJ11 power connector.
+Gen 4 only supports Power-over-Ethernet.
+
+### Buying an RFP
+
+RFPs can cost upwards of 450€ per piece when new.  
+Much to Mitel's surprise, there is a second-hand market for used devices
+(though even those are not exactly "cheap").  
+You will usually find several offers for RFPs on common auction sites, but it
+may take some patience to find ones in the 100€ range. (The Eventphone
+presentation mentions offers around 50€, but those mostly applied to bundles of
+multiple RFPs and have become a rare exception now that documentation for
+SIP-DECT setups is becoming more accessible.)
+
+## Plugging it in: Getting your RFP(s) up and running
+
+## Software: Configuring the RFP
+
+## Telepho-now: Registering a handset and making a call
+
+## More: Larger deployments, SIP servers, and other shenanigans
