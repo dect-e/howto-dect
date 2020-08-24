@@ -38,25 +38,29 @@ Just to recap:
 The SIP-DECT setup uses several more terms and abbreviations. You'll primarily
 come across:
 
-- **RFP** (Radio Fixed Part): Simply put, a DECT base station.
+- **RFP** (Radio Fixed Part):  
+  Simply put, a DECT base station.  
   *You can have one or multiple of these.*
-- **PP** (Portable Part): The DECT phone handset.
+- **PP** (Portable Part):  
+  A DECT phone handset.  
   *You can have one or multiple of these.*
-- **OMM** (Open Mobility Manager): A piece of software (running as a permanent
-  service) that accepts your configuration settings and coordinates
-  communication across all *RFP*s. The *OMM* has a web interface that allows
-  you to configure most (but not all) settings.
+- **OMM** (Open Mobility Manager):  
+  A piece of software (running as a permanent service) that accepts your
+  configuration settings and coordinates communication across all *RFP*s. The
+  *OMM* has a web interface that allows you to configure most (but not all)
+  settings.  
   *You will usually have one instance of this, possibly with a second instance
   as fallback. You might use the web interface for the inital installation, and
   occasionally for administrative tasks afterwards.*
-- **OM Configurator**: A piece of software (an administrative GUI) that allows
-  you to configure Mitel *RFP*s' basic settings: IP address, network boot
-  paths, *OMM* addresses they should use.
+- **OM Configurator**:  
+  A piece of software (an administrative GUI) that allows you to configure
+  Mitel *RFP*s' basic settings: IP address, network boot paths, *OMM* addresses
+  they should use.  
   *You might need to use this once for the initial installation, then not need
   it anymore.*
-- **OMP** (OM Management Portal): A piece of software (an administrative GUI)
-  that allows to configure your *OMM*. Similar features to the *OMM*'s own web
-  interface, but some options are available only in the web interface, or only
-  in the *OMP*.
+- **OMP** (OM Management Portal):  
+  A piece of software (an administrative GUI) that allows to configure your
+  *OMM*. Similar features to the *OMM*'s own web interface, but some options
+  are available only in the web interface, or only in the *OMP*.  
   *You might use this for the inital installation, and occasionally for
   administrative tasks afterwards.*
