@@ -173,7 +173,7 @@ section).
 
 Gen 2 and 3 indoor RFPs also support direct DC power via an RJ11 connector:
 
-![RJ11 power connector](photos/rj11-power-connector.png)
+[![RJ11 power connector](photos/thumbnails/rj11-power-connector.png)](photos/rj11-power-connector.png)
 
 [transformer-schematic]: https://www.digikey.com/en/datasheets/pulse-electronics-power/pulse-electronics-power-p675
 
@@ -210,26 +210,22 @@ RFPs][example-license-offer].
 The water-resistant case unscrews with four Phillips screws, contains raw PCB,
 fastened with two Phillips screws:
 
-![RFP 37 case interior](photos/rfp37-case-interior.jpg)
-
-![RFP 37 PCB front](photos/rfp37-pcb-front.jpg)
-
-![RFP 37 PCB back](photos/rfp37-pcb-back.jpg)
+[![RFP 37 case interior](photos/rfp37-case-interior.jpg)](photos/rfp37-case-interior.jpg)
+[![RFP 37 PCB front](photos/rfp37-pcb-front.jpg)](photos/rfp37-pcb-front.jpg)
+[![RFP 37 PCB back](photos/rfp37-pcb-back.jpg)](photos/rfp37-pcb-back.jpg)
 
 #### Indoor RFPs (e.g. 43)
 
 The case has three Torx T10 screws, two pairs of clips on each side, three
 single clips at the back (near the connectors).
 
-![RFP 43 case interior](photos/rfp43-case-interior.jpg)
-
-![RFP 43 main PCB and antenna](photos/rfp43-pcb-antenna.jpg)
-
-![RFP 43 main PCB](photos/rfp43-pcb.jpg)
+[![RFP 43 case interior](photos/thumbnails/rfp43-case-interior.jpg)](photos/rfp43-case-interior.jpg)
+[![RFP 43 main PCB and antenna](photos/thumbnails/rfp43-pcb-antenna.jpg)](photos/rfp43-pcb-antenna.jpg)
+[![RFP 43 main PCB](photos/thumbnails/rfp43-pcb.jpg)](photos/rfp43-pcb.jpg)
 
 ### RFP size
 
-![Size comparison between RFP 37 and RFP 43](photos/size-comparison.jpg)
+[![Size comparison between RFP 37 and RFP 43](photos/thumbnails/size-comparison.jpg)](photos/size-comparison.jpg)
 
 Gen 4 RFPs are smaller, see page 25 of [this brochure][sipdect8-overview] for
 an example.
