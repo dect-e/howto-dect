@@ -76,6 +76,11 @@ The naming follows the schema "RFP <number> <IP|WLAN>".
 DECT base station and WiFi access point service at the same time. Both DECT and
 WiFi functionality can be enabled/disabled in the configuration.
 
+There used to be "<number>L" models that included a license for multiple RFPs.
+As of SIP-DECT 6.0, licenses are independent from RFP models; there is no
+distinction between L- and non-L-RFPs anymore.
+(see also: [section "Licensing"](#licensing))
+
 RFPs exist in indoor and outdoor variants (easily distinguished by their smooth
 vs rugged case).  
 Do not use an indoor variant outdoors; its circuit board will corrode, which is
@@ -130,3 +135,21 @@ the passwords.
 ## Telepho-now: Registering a handset and making a call
 
 ## More: Larger deployments, SIP servers, and other shenanigans
+
+### Licensing
+
+There used to be "<number>L" models that included a license for multiple RFPs.
+As of SIP-DECT 6.0, licenses are independent from RFP models; there is no
+distinction between L- and non-L-RFPs anymore.
+
+With the new licensing model, up to 5 RFPs can be used together "out of the
+box" without adding an explicit license. (Presumably, this applies to the
+number of RFPs connected to the same OMM, regardless of how they are split into
+DECT synchronisation clusters.)
+For larger deployments, a license file needs to be purchased. The license is
+usually tied to the MAC addresses of three RFPs in the deployment (for
+redundancy in case one of the licensed RFPs becomes defective/unreachable).
+As a ballpark figure, these licenses start at [approx. 530€ for up to 10
+RFPs][example-license-offer].
+
+[example-license-offer]: https://www.telefonanlage-shop.de/Aastra-DECT-Systeme-SIP-DECT-Lizenzen-System-91
