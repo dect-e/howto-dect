@@ -76,12 +76,12 @@ The SIP-DECT RFP hardware exists in several feature classes and has gone
 through several years of development. The model numbers that arise from this
 are, shall we say, *creative*.
 
-The naming follows the schema "RFP <number> <IP|WLAN>".  
+The naming follows the schema "RFP *number* [IP|WLAN]".  
 "IP" models can only act as a DECT base station; "WLAN" models can provide both
 DECT base station and WiFi access point service at the same time. Both DECT and
 WiFi functionality can be enabled/disabled in the configuration.
 
-There used to be "<number>L" models that included a license for multiple RFPs.
+There used to be "*number*L" models that included a license for multiple RFPs.
 As of SIP-DECT 6.0, licenses are independent from RFP models; there is no
 distinction between L- and non-L-RFPs anymore.
 (see also: [section "Licensing"](#licensing))
@@ -103,6 +103,8 @@ Let's look at an overview (as of the release of SIP-DECT v8.0):
 
 (PoE-only): power only via PoE, no RJ11 power input  
 (ext-any): external antenna connector, no internal DECT antenna
+IP: only contains a DECT base station  
+WLAN: contains both a DECT base station and a WiFi AP  
 DRC: preinstalled with directional antennas in an outdoor enclosure
 
 [rfp35ip]: https://www.telefonanlage-shop.de/Aastra-EOL-END-OF-LIFE-TK-Systeme-DECT-Systeme-244/Aastra-RFP-35-IP-indoor-709#link_3
