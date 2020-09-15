@@ -176,11 +176,43 @@ Gen 2 and 3 indoor RFPs also support direct DC power via an RJ11 connector:
 
 [transformer-schematic]: https://www.digikey.com/en/datasheets/pulse-electronics-power/pulse-electronics-power-p675
 
+### Software update
+
+*TODO*
+
+### Factory reset
+
+*TODO*
+
+### IP configuration
+
+*TODO*
+
+#### OM Configurator
+
+*TODO*
+
+#### DHCP
+
+*TODO*
+
+### OMM on RFP vs stand-alone OMM
+
+*TODO*
+
+### Accessing the OMM
+
+*TODO*
+
 ## Software: Configuring the RFP
+
+*TODO*
 
 [sip-dect-manual]: https://www.mitel.com/de-de/document-center/devices-and-accessories/wireless-solutions-and-handsets/sip-dect-multi-cellular-solution/sip-dect
 
-## Telepho-now: Registering a handset and making a call
+## Phones: Registering a handset and making a call
+
+*TODO*
 
 ## More: Larger deployments, SIP servers, and other shenanigans
 
