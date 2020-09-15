@@ -1,6 +1,11 @@
 How-to DECT: Setting up a Mitel SIP-DECT RFP for home/enthusiast use
 ====================================================================
 
+* Table of contents
+{:toc}
+
+## Intro
+
 DECT telephony, courtesy of Eventphone, has been a staple of hacker conferences
 for [years][ep-history].  
 Recently, Eventphone has [improved their registration and management
