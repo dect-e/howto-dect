@@ -128,6 +128,30 @@ the passwords.
 
 ## Plugging it in: Getting your RFP(s) up and running
 
+### Powering the RFP
+
+PoE/RJ11 power
+
+All RFPs support Power over Ethernet (PoE) according to the 802.3af standard.  
+The RFP generally negotiate as Class 2, i.e. 3.84–6.49 W at the device. RFP 48
+(Gen 4 with 802.11ac WiFi) requires slightly more power and negotiates as Class
+3 (6.49–12.95 W at the device).
+
+The circuit layout of RFP 37 and 43 suggests that they support both "Mode A" (+
+on pin 1&2, - on pin 3&6) and "Mode B" (+ on pin 4&5, - on pin 7&8), as they
+have two bridge rectifiers feeding into the internal DC-DC converter.  
+Manual testing indicates that PoE voltage can be applied directly (with either
+Mode A or Mode B pinout) without going through 802.3af negotiation.  
+The RFP requires at least 37 V to function (which matches the [specifications
+of the PA1136NL transformer][transformer-schematic] used in the power supply
+section).
+
+Gen 2 and 3 indoor RFPs also support direct DC power via an RJ11 connector:
+
+![RJ11 power connector](photos/rj11-power-connector.png)
+
+[transformer-schematic]: https://www.digikey.com/en/datasheets/pulse-electronics-power/pulse-electronics-power-p675
+
 ## Software: Configuring the RFP
 
 [sip-dect-manual]: https://www.mitel.com/de-de/document-center/devices-and-accessories/wireless-solutions-and-handsets/sip-dect-multi-cellular-solution/sip-dect
@@ -153,3 +177,36 @@ As a ballpark figure, these licenses start at [approx. 530€ for up to 10
 RFPs][example-license-offer].
 
 [example-license-offer]: https://www.telefonanlage-shop.de/Aastra-DECT-Systeme-SIP-DECT-Lizenzen-System-91
+
+### Disassembly
+
+#### Outdoor RFPs (e.g. 36/37)
+
+The water-resistant case unscrews with four Phillips screws, contains raw PCB,
+fastened with two Phillips screws:
+
+![RFP 37 case interior](photos/rfp37-case-interior.jpg)
+
+![RFP 37 PCB front](photos/rfp37-pcb-front.jpg)
+
+![RFP 37 PCB back](photos/rfp37-pcb-back.jpg)
+
+#### Indoor RFPs (e.g. 43)
+
+The case has three Torx T10 screws, two pairs of clips on each side, three
+single clips at the back (near the connectors).
+
+![RFP 43 case interior](photos/rfp43-case-interior.jpg)
+
+![RFP 43 main PCB and antenna](photos/rfp43-pcb-antenna.jpg)
+
+![RFP 43 main PCB](photos/rfp43-pcb.jpg)
+
+### RFP size
+
+![Size comparison between RFP 37 and RFP 43](photos/size-comparison.jpg)
+
+Gen 4 RFPs are smaller, see page 25 of [this brochure][sipdect8-overview] for
+an example.
+
+[sipdect8-overview]: https://www.groupe-alliance.com/site_7/im/im_bdd/im_accueil/emailings/newsletter-mitel-nov-2019/SIP%20DECT%208.1%20Introduction%20&%20Overview%20-%20EN.pdf
