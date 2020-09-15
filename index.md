@@ -116,11 +116,31 @@ Gen 4 only supports Power-over-Ethernet.
 As a point of reference for power consumption: An RFP 43 WLAN uses about 5.5 W
 during normal operation.
 
+### Selecting an RFP
+
+For a home/enthuasiast setup, you probably won't be too picky about speech
+channels and indoor/outdoor variants.
+You should, however, pay attention to the generation:
+
+- Gen 2 is pretty much outdated by now — it does not support DECT encryption,
+  has to boot via TFTP on each powercycle because it has no internal flash,
+  might not support newer OMM versions, etc.
+  Basically, avoid it.
+- Gen 3 is commonly used by Eventphone — it is new enough to run the latest OMM
+  version, and its USB port is very handy for configuration resets, software
+  upgrades, and perhaps powering a small router or network switch.
+  These should work well for home/enthuasiast deployments like ours.
+- Gen 4 is up-to-date and fancy, but doesn't have a USB port, which makes
+  software updates a bit more tricky. Configuration resets are done via a
+  button, rather than a USB memory stick. Experience with this generation is
+  sparse in enthusiast circles, so you might be on your own when you encounter
+  difficulties.
+
 ### Buying an RFP
 
 RFPs can cost upwards of 450€ per piece when new.  
 There is a second-hand market for used devices, but even those are not exactly
-"cheap".  
+"cheap").  
 You will usually find several offers for RFPs on common auction sites, but it
 may take some patience to find ones in the 100€ range. (The Eventphone
 presentation mentions offers around 50€, but those mostly applied to bundles of
