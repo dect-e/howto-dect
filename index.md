@@ -46,9 +46,9 @@ come across:
   *You can have one or multiple of these.*
 - **OMM** (Open Mobility Manager):  
   A piece of software (running as a permanent service) that accepts your
-  configuration settings and coordinates communication across all *RFP*s. The
-  *OMM* has a web interface that allows you to configure most (but not all)
-  settings.  
+  configuration settings, coordinates communication across all *RFP*s, and acts
+  as the interface between SIP and DECT. The *OMM* has a web interface that
+  allows you to configure most (but not all) settings.  
   *You will usually have one instance of this, possibly with a second instance
   as fallback. You might use the web interface for the inital installation, and
   occasionally for administrative tasks afterwards.*
@@ -87,35 +87,45 @@ Let's look at an overview (as of the release of SIP-DECT v8.0):
 
 |                | indoor, 4 speech channels | indoor, 8 speech channels                  | outdoor, 8 speech channels        | identification characteristic      |
 |----------------|---------------------------|--------------------------------------------|-----------------------------------|------------------------------------|
-| 2nd generation |                           | 32 IP, 42 WLAN                             | 34 IP                             | smooth edges, no USB port          |
-| 3rd generation |                           | [35 IP][rfp35ip], 43 WLAN                  | 36 IP (PoE-only), 37 IP (ext-ant) | smooth edges, has a USB port       |
-| 4th generation | 44 IP                     | [45 IP][rfp45ip], 47 IP (ext-ant), 48 WLAN | 47 IP DRC (ext-ant)               | "modern" angular look, no USB port |
+| 2nd generation | -                         | 32 IP, 42 WLAN                             | 34 IP                             | smooth edges, no USB port          |
+| 3rd generation | -                         | [35 IP][rfp35ip], 43 WLAN                  | 36 IP (PoE-only), 37 IP (ext-ant) | smooth edges, has a USB port       |
+| 4th generation | 44 IP                     | [45 IP][rfp45ip], 47 IP (ext-ant), 48 WLAN | 47 IP DRC                         | "modern" angular look, no USB port |
 
 (PoE-only): power only via PoE, no RJ11 power input  
 (ext-any): external antenna connector, no internal DECT antenna
+DRC: preinstalled with directional antennas in an outdoor enclosure
 
 [rfp35ip]: https://www.telefonanlage-shop.de/Aastra-EOL-END-OF-LIFE-TK-Systeme-DECT-Systeme-244/Aastra-RFP-35-IP-indoor-709#link_3
 [rfp45ip]: https://www.telefonanlage-shop.de/Aastra-DECT-Systeme-SIP-DECT-RFP-62/Mitel-RFP-45-IP-indoor-2221#link_3
 
 ### Power
 
-Gen 2 and 3 RFP can be powered via Power-over-Ethernet or via an RJ11 power connector.
+Gen 2 and 3 RFPs can be powered via Power-over-Ethernet or via an RJ11 power connector.  
 Gen 4 only supports Power-over-Ethernet.
+
+As a point of reference for power consumption: An RFP 43 WLAN uses about 5.5 W
+during normal operation.
 
 ### Buying an RFP
 
 RFPs can cost upwards of 450€ per piece when new.  
-Much to Mitel's surprise, there is a second-hand market for used devices
-(though even those are not exactly "cheap").  
+There is a second-hand market for used devices, but even those are not exactly
+"cheap".  
 You will usually find several offers for RFPs on common auction sites, but it
 may take some patience to find ones in the 100€ range. (The Eventphone
 presentation mentions offers around 50€, but those mostly applied to bundles of
 multiple RFPs and have become a rare exception now that documentation for
 SIP-DECT setups is becoming more accessible.)
 
+As long as the hardware is functional, you should have nothing to worry about:
+there are means to reset the configuration even if the seller has not provided
+the passwords.
+
 ## Plugging it in: Getting your RFP(s) up and running
 
 ## Software: Configuring the RFP
+
+[sip-dect-manual]: https://www.mitel.com/de-de/document-center/devices-and-accessories/wireless-solutions-and-handsets/sip-dect-multi-cellular-solution/sip-dect
 
 ## Telepho-now: Registering a handset and making a call
 
