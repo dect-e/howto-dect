@@ -163,9 +163,14 @@ The RFP generally negotiate as Class 2, i.e. 3.84–6.49 W at the device. RFP 48
 
 The circuit layout of RFP 37 and 43 suggests that they support both "Mode A" (+
 on pin 1&2, - on pin 3&6) and "Mode B" (+ on pin 4&5, - on pin 7&8), as they
-have two bridge rectifiers feeding into the internal DC-DC converter.  
+have two bridge rectifiers feeding into the internal DC-DC converter.
+
 Manual testing indicates that PoE voltage can be applied directly (with either
 Mode A or Mode B pinout) without going through 802.3af negotiation.  
+Unfortunately, the RFPs only establish an Ethernet link when all 8 pins are
+connected, so 100 Mbit/s passive PoE injectors (which replace 4 data pins with
+power-only pins) do not work. 1 Gbit/s passive injectors (which use a
+transformer to add power to the existing data pins) should work, though.  
 The RFP requires at least 37 V to function (which matches the [specifications
 of the PA1136NL transformer][transformer-schematic] used in the power supply
 section).
