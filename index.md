@@ -108,14 +108,6 @@ DRC: preinstalled with directional antennas in an outdoor enclosure
 [rfp35ip]: https://www.telefonanlage-shop.de/Aastra-EOL-END-OF-LIFE-TK-Systeme-DECT-Systeme-244/Aastra-RFP-35-IP-indoor-709#link_3
 [rfp45ip]: https://www.telefonanlage-shop.de/Aastra-DECT-Systeme-SIP-DECT-RFP-62/Mitel-RFP-45-IP-indoor-2221#link_3
 
-### Power
-
-Gen 2 and 3 RFPs can be powered via Power-over-Ethernet or via an RJ11 power connector.  
-Gen 4 only supports Power-over-Ethernet.
-
-As a point of reference for power consumption: An RFP 43 WLAN uses about 5.5 W
-during normal operation.
-
 ### Selecting an RFP
 
 For a home/enthuasiast setup, you probably won't be too picky about speech
@@ -155,7 +147,12 @@ the passwords.
 
 ### Powering the RFP
 
-PoE/RJ11 power
+Gen 2 and 3 RFPs can be powered via Power over Ethernet or via an RJ11 power
+connector.  
+Gen 4 only supports Power-over-Ethernet.
+
+As a point of reference for power consumption: An RFP 43 WLAN uses about 5.5 W
+during normal operation.
 
 All RFPs support Power over Ethernet (PoE) according to the 802.3af standard.  
 The RFP generally negotiate as Class 2, i.e. 3.84–6.49 W at the device. RFP 48
