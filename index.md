@@ -186,7 +186,7 @@ Gen 2 and 3 indoor RFPs also support direct DC power via an RJ11 connector:
 While there are many ways to get the latest Firmware on your DECT RFP, the most easy one is by using an USB Flash drive.
 1. Make sure the Flash Drive is formatted FAT32
 2. Copy the Firmware file onto the Drive
-3. Make sure it is named ipdect3G.dnld (for Gen. 3 RFPs) or ipdect4G.dnld (for Gen 4 RFPs)
+3. Make sure it is named iprfp3G.dnld (for Gen. 3 RFPs) or iprfp4G.dnld (for Gen 4 RFPs)
 4. Connect the Flash drive to the RFP and reboot the RFP by switching off and on the 48V
 5. Wait for about 2 Minutes until the RFP signalizes successfull flashing by LED flashing
 
