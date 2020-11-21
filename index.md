@@ -183,11 +183,26 @@ Gen 2 and 3 indoor RFPs also support direct DC power via an RJ11 connector:
 
 ### Software update
 
-*TODO*
+While there are many ways to get the latest Firmware on your DECT RFP, the most easy one is by using an USB Flash drive.
+1. Make sure the Flash Drive is formatted FAT32
+2. Copy the Firmware file onto the Drive
+3. Make sure it is named ipdect3G.dnld (for Gen. 3 RFPs) or ipdect4G.dnld (for Gen 4 RFPs)
+4. Connect the Flash drive to the RFP and reboot the RFP by switching off and on the 48V
+5. Wait for about 2 Minutes until the RFP signalizes successfull flashing by LED flashing
+
+### Recovering a RFP with corrupted Firmware.
+
+If the LED1 does not switch to orange after a reboot, chance is high the firmware might be corrupted. You can optionally verify this by get a serial dump of the u-boot bootloader. "UBI error" and "Error reading files" are the indicators you looking for.
+
+To fix this, there is a function called uImageFailSafe that can be found on the internet, at least for SIP-DECT Version 4. 
+
+Take a FAT32 formatted USB Flash Drive, copy the "uImageFailSafe" and the corresponding SIP-DECT Vers. 4 "iprf3G.dnld" onto the Drive and reboot the RFP. 
+
+The RFP will flash Version 4 from where it can be upgraded to the latest Version by the procedure shown above. 
 
 ### Factory reset
 
-*TODO*
+Just as the firmware upgrade, the most easy way is to copy an empty text file called factoryReset to a FAT32-formatted USB flash drive. Power-cycle the RFP and wait for the RFP to be reset. After an successful reset, the file should be deleted by the RFP. 
 
 ### IP configuration
 
