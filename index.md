@@ -196,7 +196,7 @@ If the LED1 does not switch to orange after a reboot, chance is high the firmwar
 
 To fix this, there is a function called uImageFailSafe that can be found on the internet, at least for SIP-DECT Version 4. 
 
-Take a FAT32 formatted USB Flash Drive, copy the "uImageFailSafe" and the corresponding SIP-DECT Vers. 4 "iprf3G.dnld" onto the Drive and reboot the RFP. 
+Take a FAT32 formatted USB Flash Drive, copy the "uImageFailSafe" and the corresponding SIP-DECT Vers. 4 "iprfp3G.dnld" onto the Drive and reboot the RFP. 
 
 The RFP will flash Version 4 from where it can be upgraded to the latest Version by the procedure shown above. 
 
