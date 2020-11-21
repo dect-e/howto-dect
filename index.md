@@ -282,3 +282,9 @@ Gen 4 RFPs are smaller, see page 25 of [this brochure][sipdect8-overview] for
 an example.
 
 [sipdect8-overview]: https://www.groupe-alliance.com/site_7/im/im_bdd/im_accueil/emailings/newsletter-mitel-nov-2019/SIP%20DECT%208.1%20Introduction%20&%20Overview%20-%20EN.pdf
+
+### Serial Console
+[![RFP43 Serial Console](photos/thumbnails/rfp43-serial.jpg)](photos/rfp43-serial.jpg)
+
+  - 3,3V Serial Console 
+  - 115200 baud
