@@ -202,7 +202,10 @@ The RFP will flash Version 4 from where it can be upgraded to the latest Version
 
 ### Factory reset
 
-Just as the firmware upgrade, the most easy way is to copy an empty text file called factoryReset to a FAT32-formatted USB flash drive. Power-cycle the RFP and wait for the RFP to be reset. After an successful reset, the file should be deleted by the RFP. 
+Just as for the firmware upgrade, the easiest way to reset the RFP is to copy an empty file called `factoryReset` (case-sensitive) to a FAT32-formatted USB flash drive.
+Power-cycle the RFP and wait for the RFP to be reset. After a successful reset, the file should theoretically be deleted by the RFP, but sometimes it also resets correctly without deleting the file.
+
+The factory reset via USB was added in SIP-DECT version 6.0. If your RFP has an older version, you will have to update to a newer version first (for example via the USB update method), and use the `factoryReset` file after the update.
 
 ### IP configuration
 
