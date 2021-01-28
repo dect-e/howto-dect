@@ -1,0 +1,14 @@
+IP Configuration - OMM Configurator
+
+Connect to the RFP and start the OM Configurator (omcfg). In the top right corner, click on "General", then select "Options". Select the correct Network Interface and click "OK". Then the right side, click "Scan". On the appearing "Scan settings"-Popup, select "get configuration after detecting  an RFP", enter username and password (default is omm/omm). Select "show only successfully accessed RFPs". Start the scan can by clicking "OK".
+Select the IP with the correct MAC adress and click "Edit configuration" on the right side Menu. This will let you access the RFP's Configuration.
+
+In the "General" tab, you set the Network configuration of the RFP. Checking "Use Local Config" will ... i have no idea what it does:)
+	
+In the "OpenMobility" tab, enter the location of the OMM and an (optional) backup OMM there. If you want to serve the OMM on the RFP itself, enter the RFP's own IP. It will start up the OMM on reboot. Also enter a working DNS Server. Next, you need to configure TFTP the options can't be left empty, so you must enter a fake TFTP server IP. As TFTP file name, enter something like "test". The Fields "RFP configuration file", "Syslog Server address" and "Syslog Server port" may be left empty.
+
+In the "Other" tab, you dont have to set anything.
+
+When finished, apply the Settings by clicking "OK", then upload the Config to the RFP by clicking "Send Configuration". Enter the Username and Password (default is omm/omm), then click "OK".
+
+A message "<Timestamp> Configuration of <MAC-Address> successful" appearing in the omcfg's console will tell you it worked. You can then power-cycle the RFP.
