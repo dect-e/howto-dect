@@ -263,6 +263,8 @@ host myfancyrfp {
 }
 ```
 
+The RFP will ignore DHCP offers that do not contain the `magic_str`. This means that (1) the magic string must be included in DHCP replies intended for RFPs, so (2) it may be possible to have two co-existing DHCP servers (one for normal devices and one for RFPs).
+
 ### OMM on RFP vs stand-alone OMM
 
 *TODO*
