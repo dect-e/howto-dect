@@ -209,11 +209,32 @@ The factory reset via USB was added in SIP-DECT version 6.0. If your RFP has an 
 
 ### IP configuration
 
-*TODO*
+To function as a DECT base station, each RFP needs to be connected to a network, have an IP address, and know (and be able to connect to) the address of an OMM.
 
-#### OM Configurator
+The RFP tries to obtain these settings via DHCP by default, but can also be configured manually with a static configuration.
 
-*TODO*
+#### Manual/static configuration via the OM Configurator
+
+A note beforehand: You cannot mix static and dynamic configuration (e.g. obtain the IP via DHCP but configure the OMM IP statically), the RFP will ignore either one or the other.
+
+Connect the RFP to the network and start the OM Configurator (omcfg).  
+In the top right corner, click on "General", then select "Options". Select the correct Network Interface and click "OK".  
+Then, in the right side menu, click "Scan". You will see a "Scan settings" popup, select "get configuration after detecting&nbsp;&nbsp;an RFP" [sic], enter username and password (default is omm/omm). Select "show only successfully accessed RFPs". Start the scan can by clicking "OK".
+
+Select the RFP with the correct MAC adress and click "Edit configuration" on the right side menu. This will let you access the RFP's configuration.
+
+In the "General" tab, enter the network configuration for the RFP and tick "Use Local Config" to have it use this static configuration.
+
+In the "OpenMobility" tab, enter the IP address of the OMM (and optionally, a backup OMM). If you want to serve the OMM on the RFP itself, enter the RFP's own IP. It will start up the OMM on reboot. Also enter a working DNS server.  
+Next, you need to configure TFTP. The options can't be left empty, but you can enter "0.0.0.0" as the "TFTP server address" and any non-empty value as the "TFTP file name" if you're not planning to use it. The RFP will boot from its internal flash instead (TFTP boot is supported by all RFP generations, internal flash supported on generation >= 3).
+
+The Fields "RFP configuration file", "Syslog Server address" and "Syslog Server port" may be left empty.
+
+In the "Other" tab, you don't have to set anything.
+
+When finished, apply the settings by clicking "OK", then upload the config to the RFP by clicking "Send Configuration". Enter the username and password (default is omm/omm), then click "OK".
+
+A message "&lt;Timestamp&gt; Configuration of &lt;MAC-Address&gt; successful" will appear in the OM Configurator's console to tell you it worked. You can then power-cycle the RFP.
 
 #### DHCP
 
