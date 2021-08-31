@@ -123,7 +123,7 @@ You should, however, pay attention to the generation:
   system and **will not work** with SIP-DECT at all.
 - Gen 2 is pretty much outdated by now — it does not support DECT encryption,
   has to boot via TFTP on each powercycle because it has no internal flash,
-  is only supported up to SIP-DECT version 7, etc.
+  is only supported up to SIP-DECT version 8.0 (removed in 8.1), etc.
   Basically, avoid it.
 - Gen 3 is commonly used by Eventphone — it is new enough to run the latest OMM
   version, and its USB port is very handy for configuration resets, software
