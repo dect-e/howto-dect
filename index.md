@@ -97,12 +97,14 @@ Let's look at an overview (as of the release of SIP-DECT v8.0):
 
 |                | indoor, 4 speech channels | indoor, 8 speech channels                  | outdoor, 8 speech channels        | identification characteristic      |
 |----------------|---------------------------|--------------------------------------------|-----------------------------------|------------------------------------|
-| 2nd generation | -                         | 32 IP, 42 WLAN                             | 34 IP                             | smooth edges, no USB port          |
-| 3rd generation | -                         | [35 IP][rfp35ip], 43 WLAN                  | 36 IP (PoE-only), 37 IP (ext-ant) | smooth edges, has a USB port       |
+| UpN (non-IP)   | -                         | 22                                         | 24                                | rectangular with protrusion, 1 LED |
+| 1st generation | -                         | 31 IP, 41 WLAN                             | 33 IP                             | smooth edges, no USB port, 1 LED   |
+| 2nd generation | -                         | 32 IP, 42 WLAN                             | 34 IP                             | smooth edges, no USB port, 4 LEDs  |
+| 3rd generation | -                         | [35 IP][rfp35ip], 43 WLAN                  | 36 IP (PoE-only), 37 IP (ext-ant) | smooth edges, USB port, 4 LEDs     |
 | 4th generation | 44 IP                     | [45 IP][rfp45ip], 47 IP (ext-ant), 48 WLAN | 47 IP DRC                         | "modern" angular look, no USB port |
 
 (PoE-only): power only via PoE, no RJ11 power input  
-(ext-any): external antenna connector, no internal DECT antenna
+(ext-ant): external antenna connector, no internal DECT antenna  
 IP: only contains a DECT base station  
 WLAN: contains both a DECT base station and a WiFi AP  
 DRC: preinstalled with directional antennas in an outdoor enclosure
@@ -116,9 +118,12 @@ For a home/enthuasiast setup, you probably won't be too picky about speech
 channels and indoor/outdoor variants.
 You should, however, pay attention to the generation:
 
+- Gen 1 and the earlier UpN-connected (instead of IP) models are meant to be
+  used with the ([now discontinued][opencom-eol]) [OpenCom][opencom] telephony
+  system and **will not work** with SIP-DECT at all.
 - Gen 2 is pretty much outdated by now — it does not support DECT encryption,
   has to boot via TFTP on each powercycle because it has no internal flash,
-  might not support newer OMM versions, etc.
+  is only supported up to SIP-DECT version 7, etc.
   Basically, avoid it.
 - Gen 3 is commonly used by Eventphone — it is new enough to run the latest OMM
   version, and its USB port is very handy for configuration resets, software
@@ -129,6 +134,9 @@ You should, however, pay attention to the generation:
   button, rather than a USB memory stick. Experience with this generation is
   sparse in enthusiast circles, so you might be on your own when you encounter
   difficulties.
+
+[opencom]: https://www.also.com/pub/assets/87dfdacb-0880-413b-a5d3-00a3e033b311.pdf
+[opencom-eol]: https://www.telefonanlage-shop.de/News/20-Ankuendigung-Vertriebsende-OpenCom-100-Serie
 
 ### Buying an RFP
 
