@@ -10,10 +10,13 @@ DECT telephony, courtesy of Eventphone, has been a staple of hacker conferences
 for [years][ep-history].  
 Recently, Eventphone has [improved their registration and management
 system][newsys] and [presented more information on its inner workings][mifail].
+There has also been some [investigation into the internal hardware and
+protocols of the Mitel SIP-DECT RFP hardware][dissection].
 
 [ep-history]: https://media.ccc.de/v/35c3oio-70-eventphone-frher-heute-morgen-
 [newsys]: https://media.ccc.de/v/eh19-179-das-neue-eventphone-poc-telefonsystem
 [mifail]: https://media.ccc.de/v/36c3-10576-mifail_oder_mit_gigaset_ware_das_nicht_passiert
+[dissection]: https://media.ccc.de/v/osmodevcon2019-100-aastra-mitel-dect-base-station-dissection
 
 With all this information at the ready, one might decide to try and replicate
 the familiar DECT setup at home.  
