@@ -290,9 +290,38 @@ The RFP will ignore DHCP offers that do not contain the `magic_str`. This means 
 
 [sip-dect-manual]: https://www.mitel.com/de-de/document-center/devices-and-accessories/wireless-solutions-and-handsets/sip-dect-multi-cellular-solution/sip-dect
 
-## Phones: Registering a handset and making a call
+## Manual OMM configuration and making a test call
 
-*TODO*
+### OMM  Setup
+First, log in to the OMM by browsing the web interface, you might have to accept the self-signed certificate. After accepting the EULA, you will be asked to set passwords.
+
+| User   | Default Password | Description                                           |
+| ------ | ---------------- | ----------------------------------------------------- |
+| omm    | omm              | Web Interface, OMM Configrator, OMM Management Portal |
+| root   | -                | SSH access                                            |
+
+### System Settings
+
+Now we have to do some basic setup. Make sure to set the `Advanced`-Checkbox at the top to access all settings.
+
+First go to the `System / System Settings` tab to set the PARK.
+- If your OMM has internet access, simply click `Online PARK request`.
+- Otherwise, click `Manual PARK import`. You will be asked to download a request file that can be uploadad to Mitel's [PARK Manager](https://parkmanager.mitel.com/pm/portal/parks/fetch.xhtml). The PARK Manager will let you the response file that you can upload back to the OMM.
+
+After succesfully obtaining a PARK, set the `Regulatory Domain` setting according to your location. For Europe, select `EMEA`
+
+Make sure you apply the settings by clicking `OK` at the top.
+
+### SIP Settings
+
+Go to `System / SIP` and enter the information about your SIP Server:
+
+| Setting          | Example         |
+| ---------------- | --------------- |
+| Proxy Server     | sip.example.com |
+| Proxy Port       | 5060            |
+| Registrar Server | sip.example.com |
+| Registrar Port   | 5060            |
 
 ## More: Larger deployments, SIP servers, and other shenanigans
 
