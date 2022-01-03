@@ -72,6 +72,14 @@ come across:
   are available only in the web interface, or only in the *OMP*.  
   *You might use this for the inital installation, and occasionally for
   administrative tasks afterwards.*
+- **PARK** (Portable Access Rights Keys):  
+  *TODO*
+- **IPEI** (International Portable Equipment Identity):  
+  The IPEI is a 36 Bit Unique Identifier for the PP, consisting of 16 bits EMC 
+  (Equipment Manufacturer's Code) and 20 Bits PSN (Portable Serial Number) and 
+  is issued by the manufacturer. The Decimal representation should constist
+  of 5 digits EMC, 7 digits PSN and one digit modulo 11 sum.
+
 
 ## Hardware: RFP generations
 
