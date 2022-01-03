@@ -323,6 +323,13 @@ Go to `System / SIP` and enter the information about your SIP Server:
 | Registrar Server | sip.example.com |
 | Registrar Port   | 5060            |
 
+### Find out the IPEI of your PP
+
+As a prerequisit to the next step you have to know the `IPEI` of the PP you want to register:
+- Some manufacturers print the IPEI on the PP (e.g. inside the battery tray).
+- If you can't find the IPEI, go to `SIP Users / Decives` and set `Subscription` to `Subscription`. Now go to `System > Event Log` and try to register your PP by using the PIN 0000. The registration will fail, however we can now get the IPEI from the event log.
+
+`GMI : AccessRightsFailed(ipei=XXXXX XXXXXXX X, Missing DECT_IE_PORTABLE_ID or no wildcard subscription)`
 ## More: Larger deployments, SIP servers, and other shenanigans
 
 ### Licensing
