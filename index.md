@@ -337,6 +337,29 @@ As a prerequisit to the next step you have to know the `IPEI` of the PP you want
 
 `GMI : AccessRightsFailed(ipei=XXXXX XXXXXXX X, Missing DECT_IE_PORTABLE_ID or no wildcard subscription)`
 
+### Registering a PP
+
+Go to the `SIP Users/Devices` page. At the `Create a new SIP User/Device` line, click `New`. A new window will open that lets you add a new User-Phone-Combination. **TODO*: SIP acconts <> USER <> DEVICES ???*
+
+General Settings
+
+| Setting                  | Example         | Description                 |
+| ------------------------ | --------------- | --------------------------- |
+| Display Name             | 3000            | SIP Display Name (optional) |
+| Number/SIP user name     | 3000            | SIP Authentication User     |
+| User/Device relation     | fixed           | USER / Device relationship  |
+| IPEI                     | 12345 1234567 1 | IPEI of the PP to register  |
+| DECT authentication code | 0000            | DECT-PIN                    |
+
+SIP Authentication
+
+| Setting                  | Example     | Description                 |
+| ------------------------ | ----------- | --------------------------- |
+| Authentication user name | mySIPuser   | SIP Authentication User     |
+| Password                 | mySecret123 | SIP Authentication Password |
+| Password confirmation    | mySecret123 | SIP Authentication User     |
+
+You can then apply the settings by clicking `OK` at the bottom. The created user will appear in the list. Now make sure `Subscription` is set to `Subscription` and try to register your PP. The PP should be able to subscribe to your DECT Network and you should be able to make a call. \o/
 
 ## More: Larger deployments, SIP servers, and other shenanigans
 
