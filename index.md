@@ -316,13 +316,11 @@ First go to the `System / System Settings` tab to set the PARK.
 - If your OMM has internet access, simply click `Online PARK request`.
 - Otherwise, click `Manual PARK import`. You will be asked to download a request file that can be uploadad to Mitel's [PARK Manager](https://parkmanager.mitel.com/pm/portal/parks/fetch.xhtml). The PARK Manager will let you the response file that you can upload back to the OMM.
 
-After succesfully obtaining a PARK, set the `Regulatory Domain` setting according to your location. For Europe, select `EMEA`
-
-Make sure you apply the settings by clicking `OK` at the top.
+After obtaining the PARK, the OMM will restart. After loging in again, set the `Regulatory Domain` setting according to your location. For Europe, select `EMEA`. Make sure you apply the settings by clicking `OK` at the top and wait for the RFP to restart.
 
 ### SIP Settings
 
-Go to `System / SIP` and enter the information about your SIP Server:
+Go to `System / SIP` and enter the information about your SIP Server. Make sure, you apply the settings by clicking `OK`.
 
 | Setting          | Example         |
 | ---------------- | --------------- |
@@ -335,9 +333,11 @@ Go to `System / SIP` and enter the information about your SIP Server:
 
 As a prerequisit to the next step you have to know the `IPEI` of the PP you want to register:
 - Some manufacturers print the IPEI on the PP (e.g. inside the battery tray).
-- If you can't find the IPEI, go to `SIP Users / Decives` and set `Subscription` to `Subscription`. Now go to `System > Event Log` and try to register your PP by using the PIN 0000. The registration will fail, however we can now get the IPEI from the event log.
+- If you can't find the IPEI, go to `SIP Users / Decives`, set `Subscription` to `Subscription` and apply with `OK`. Now go to `System > Event Log` and try to register your PP by using the PIN 0000. The registration will fail, however after reloading the website, we can now get the IPEI from the event log.
 
 `GMI : AccessRightsFailed(ipei=XXXXX XXXXXXX X, Missing DECT_IE_PORTABLE_ID or no wildcard subscription)`
+
+
 ## More: Larger deployments, SIP servers, and other shenanigans
 
 ### Licensing
