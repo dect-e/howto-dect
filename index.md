@@ -361,6 +361,18 @@ Go to the `SIP Users/Devices` page. At the `Create a new SIP User/Device` line, 
 
 You can then apply the settings by clicking `OK` at the bottom. The newly created user will appear in the list. Now make sure `Subscription` is set to `Subscription` and try to register your PP. The PP should be able to subscribe to your DECT Network and you should be able to make a call. \o/
 
+### User-Device Relations
+
+*TODO*.
+
+SIP-DECT provides a mechanism to dynamically assign *Users* (i.e. a number, display name, and SIP account) to *Devices* (PPs).  
+This can be useful when a device is shared by multiple users (same handset, changing on-call personnel with individual numbers), or vice versa (fixed on-call number, changing on-call personnel with individual handsets).
+
+To use this feature, set the "User/Device relation" to "dynamic" when creating a combined user-device entry.  
+If it is not needed, you can choose "fixed" instead.
+
+If a user-device combination is "dynamic" the user can call a feature-code number from their device to detach and re-attach their *User* from the *Device* they're making the call from.
+
 ## More: Larger deployments, SIP servers, and other shenanigans
 
 ### Licensing
