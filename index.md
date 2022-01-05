@@ -75,9 +75,9 @@ come across:
 - **PARK** (Portable Access Rights Keys):  
   *TODO*
 - **IPEI** (International Portable Equipment Identity):  
-  The IPEI is a 36 Bit Unique Identifier for the PP, consisting of 16 bits EMC 
+  The IPEI is a 36 Bit unique identifier for the PP, consisting of 16 bits EMC 
   (Equipment Manufacturer's Code) and 20 Bits PSN (Portable Serial Number) and 
-  is issued by the manufacturer. The Decimal representation should constist
+  is issued by the manufacturer. The decimal representation should consist
   of 5 digits EMC, 7 digits PSN and one digit modulo 11 sum.
 
 
@@ -300,7 +300,7 @@ The RFP will ignore DHCP offers that do not contain the `magic_str`. This means 
 
 ## Manual OMM configuration and making a test call
 
-### OMM  Setup
+### OMM Setup
 First, log in to the OMM by browsing the web interface, you might have to accept the self-signed certificate. After accepting the EULA, you will be asked to set passwords.
 
 | User   | Default Password | Description                                           |
@@ -355,9 +355,9 @@ SIP Authentication
 
 | Setting                  | Example     | Description                 |
 | ------------------------ | ----------- | --------------------------- |
-| Authentication user name | mySIPuser   | SIP Authentication User     |
-| Password                 | mySecret123 | SIP Authentication Password |
-| Password confirmation    | mySecret123 | SIP Authentication User     |
+| Authentication user name | mySIPuser   | SIP authentication user     |
+| Password                 | mySecret123 | SIP authentication password |
+| Password confirmation    | mySecret123 | SIP authentication password |
 
 You can then apply the settings by clicking `OK` at the bottom. The created user will appear in the list. Now make sure `Subscription` is set to `Subscription` and try to register your PP. The PP should be able to subscribe to your DECT Network and you should be able to make a call. \o/
 
