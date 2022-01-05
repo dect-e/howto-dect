@@ -72,6 +72,14 @@ come across:
   are available only in the web interface, or only in the *OMP*.  
   *You might use this for the inital installation, and occasionally for
   administrative tasks afterwards.*
+- **PARK** (Portable Access Rights Keys):  
+  *TODO*
+- **IPEI** (International Portable Equipment Identity):  
+  The IPEI is a 36 Bit unique identifier for the PP, consisting of 16 bits EMC 
+  (Equipment Manufacturer's Code) and 20 Bits PSN (Portable Serial Number) and 
+  is issued by the manufacturer. The decimal representation should consist
+  of 5 digits EMC, 7 digits PSN and one digit modulo 11 sum.
+
 
 ## Hardware: RFP generations
 
@@ -290,9 +298,68 @@ The RFP will ignore DHCP offers that do not contain the `magic_str`. This means 
 
 [sip-dect-manual]: https://www.mitel.com/de-de/document-center/devices-and-accessories/wireless-solutions-and-handsets/sip-dect-multi-cellular-solution/sip-dect
 
-## Phones: Registering a handset and making a call
+## Manual OMM configuration and making a test call
 
-*TODO*
+### OMM Setup
+First, log in to the OMM by browsing the web interface, you might have to accept the self-signed certificate. After accepting the EULA, you will be asked to set passwords.
+
+| User   | Default Password | Description                                           |
+| ------ | ---------------- | ----------------------------------------------------- |
+| omm    | omm              | Web Interface, OMM Configrator, OMM Management Portal |
+| root   | -                | SSH access                                            |
+
+### System Settings
+
+Now we have to do some basic setup. Make sure to set the `Advanced`-Checkbox at the top to access all settings.
+
+First go to the `System / System Settings` tab to set the PARK.
+- If your OMM has internet access, simply click `Online PARK request`.
+- Otherwise, click `Manual PARK import`. You will be asked to download a request file that can be uploadad to Mitel's [PARK Manager](https://parkmanager.mitel.com/pm/portal/parks/fetch.xhtml). The PARK Manager will let you the response file that you can upload back to the OMM.
+
+After obtaining the PARK, the OMM will restart. After logging in again, set the `Regulatory Domain` setting according to your location. For Europe, select `EMEA` ("Europe, the Middle East and Africa"). Make sure you apply the settings by clicking `OK` at the top and wait for the RFP to restart.
+
+### SIP Settings
+
+Go to `System / SIP` and enter the information about your SIP Server. Make sure, you apply the settings by clicking `OK`.
+
+| Setting          | Example         |
+| ---------------- | --------------- |
+| Proxy Server     | sip.example.com |
+| Proxy Port       | 5060            |
+| Registrar Server | sip.example.com |
+| Registrar Port   | 5060            |
+
+### Find out the IPEI of your PP
+
+As a prerequisite to the next step you have to know the *IPEI* of the PP you want to register:
+- Some manufacturers print the IPEI on the PP (e.g. inside the battery tray).
+- If you can't find the IPEI, go to `SIP Users / Devices`, set `Subscription` to `Subscription` and apply with `OK`. Now go to `System > Event Log` and try to register your PP by using the PIN 0000. The registration will fail, however after reloading the website, we can now get the IPEI from the event log.
+
+`GMI : AccessRightsFailed(ipei=XXXXX XXXXXXX X, Missing DECT_IE_PORTABLE_ID or no wildcard subscription)`
+
+### Registering a PP
+
+Go to the `SIP Users/Devices` page. At the `Create a new SIP User/Device` line, click `New`. A new window will open that lets you add a new User-Phone-Combination. **TODO*: SIP acconts <> USER <> DEVICES ???*
+
+#### General Settings
+
+| Setting                  | Example         | Description                                                                 |
+| ------------------------ | --------------- | --------------------------------------------------------------------------- |
+| Display Name             | 3000            | SIP display name (optional)                                                 |
+| Number/SIP user name     | 3000            | DECT-internal phone number; used as SIP username if not overridden below    |
+| User/Device relation     | fixed           | USER / Device relationship                                                  |
+| IPEI                     | 12345 1234567 1 | IPEI of the PP to register                                                  |
+| DECT authentication code | 0000            | DECT PIN (the one you enter on your PP when registering with the DECT base) |
+
+#### SIP Authentication
+
+| Setting                  | Example     | Description                                                               |
+| ------------------------ | ----------- | ------------------------------------------------------------------------- |
+| Authentication user name | mySIPuser   | SIP authentication user (defaults to DECT-internal phone number if unset) |
+| Password                 | mySecret123 | SIP authentication password                                               |
+| Password confirmation    | mySecret123 | SIP authentication password                                               |
+
+You can then apply the settings by clicking `OK` at the bottom. The newly created user will appear in the list. Now make sure `Subscription` is set to `Subscription` and try to register your PP. The PP should be able to subscribe to your DECT Network and you should be able to make a call. \o/
 
 ## More: Larger deployments, SIP servers, and other shenanigans
 
