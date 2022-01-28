@@ -120,6 +120,9 @@ IP: only contains a DECT base station
 WLAN: contains both a DECT base station and a WiFi AP  
 DRC: preinstalled with directional antennas in an outdoor enclosure
 
+You can see a 3rd gen (whose case is nearly identical to that of a 2nd gen) and
+a 4th gen RFP in [this photo by Eventphone][gen3-4-photo].
+
 [rfp35ip]: https://www.telefonanlage-shop.de/Aastra-EOL-END-OF-LIFE-TK-Systeme-DECT-Systeme-244/Aastra-RFP-35-IP-indoor-709#link_3
 [rfp45ip]: https://www.telefonanlage-shop.de/Aastra-DECT-Systeme-SIP-DECT-RFP-62/Mitel-RFP-45-IP-indoor-2221#link_3
 
@@ -361,6 +364,18 @@ Go to the `SIP Users/Devices` page. At the `Create a new SIP User/Device` line, 
 
 You can then apply the settings by clicking `OK` at the bottom. The newly created user will appear in the list. Now make sure `Subscription` is set to `Subscription` and try to register your PP. The PP should be able to subscribe to your DECT Network and you should be able to make a call. \o/
 
+### User-Device Relations
+
+*TODO*.
+
+SIP-DECT provides a mechanism to dynamically assign *Users* (i.e. a number, display name, and SIP account) to *Devices* (PPs).  
+This can be useful when a device is shared by multiple users (same handset, changing on-call personnel with individual numbers), or vice versa (fixed on-call number, changing on-call personnel with individual handsets).
+
+To use this feature, set the "User/Device relation" to "dynamic" when creating a combined user-device entry.  
+If it is not needed, you can choose "fixed" instead.
+
+If a user-device combination is "dynamic" the user can call a feature-code number from their device to detach and re-attach their *User* from the *Device* they're making the call from.
+
 ## More: Larger deployments, SIP servers, and other shenanigans
 
 ### Licensing
@@ -405,10 +420,10 @@ single clips at the back (near the connectors).
 
 [![Size comparison between RFP 37 and RFP 43](photos/thumbnails/size-comparison.jpg)](photos/size-comparison.jpg)
 
-Gen 4 RFPs are smaller, see page 25 of [this brochure][sipdect8-overview] for
-an example.
+Gen 4 RFPs are smaller, see [this photo by Eventphone][gen3-4-photo] for an
+example.
 
-[sipdect8-overview]: https://www.groupe-alliance.com/site_7/im/im_bdd/im_accueil/emailings/newsletter-mitel-nov-2019/SIP%20DECT%208.1%20Introduction%20&%20Overview%20-%20EN.pdf
+[gen3-4-photo]: https://eventphone.de/doku/_detail/epddi-router-antennen.jpg
 
 ### Serial Console
 [![RFP43 Serial Console](photos/thumbnails/rfp43-serial.jpg)](photos/rfp43-serial.jpg)
