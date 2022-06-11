@@ -396,6 +396,17 @@ RFPs][example-license-offer].
 
 [example-license-offer]: https://www.telefonanlage-shop.de/Aastra-DECT-Systeme-SIP-DECT-Lizenzen-System-91
 
+### Mounting
+
+The RFPs feature different methods of (usually wall-) mounting them: The indoor
+models can generally be hooked onto a screw that was previously screwed into
+the wall, while the outdoor models feature both a hook and a number of nuts
+embedded into the plastic case.
+
+Since the need for fast and frequent mounting and unmounting during events
+arose, there is now a repository with measured dimensions and mounting plate
+designs: [dect-e/rfp-mounting](https://github.com/dect-e/rfp-mounting)
+
 ### Disassembly
 
 #### Outdoor RFPs (e.g. 36/37)
