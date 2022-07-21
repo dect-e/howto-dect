@@ -108,7 +108,7 @@ Let's look at an overview (as of the release of SIP-DECT v8.0):
 
 |                | indoor, 4 speech channels | indoor, 8 speech channels                  | outdoor, 8 speech channels        | identification characteristic      |
 |----------------|---------------------------|--------------------------------------------|-----------------------------------|------------------------------------|
-| UpN (non-IP)   | -                         | 22                                         | 24                                | rectangular with protrusion, 1 LED |
+| UpN (non-IP)   | -                         | 21, 22                                     | 23, 24                            | rectangular with protrusion, 1 LED |
 | 1st generation | -                         | 31 IP, 41 WLAN                             | 33 IP                             | smooth edges, no USB port, 1 LED   |
 | 2nd generation | -                         | 32 IP, 42 WLAN                             | 34 IP                             | smooth edges, no USB port, 4 LEDs  |
 | 3rd generation | -                         | [35 IP][rfp35ip], 43 WLAN                  | 36 IP (PoE-only), 37 IP (ext-ant) | smooth edges, USB port, 4 LEDs     |
