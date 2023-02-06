@@ -293,7 +293,15 @@ The RFP will ignore DHCP offers that do not contain the `magic_str`. This means 
 
 ### Accessing the OMM
 
-*TODO*
+You can access the OMM with you browser for that go to the ip defined in your DHCP config.
+The default credentials are:
+```
+username: omm
+password: omm
+```
+
+A common problem you might experince is that the omm only supports tls version 1.1
+If you want to enable that in Firefox you can open a new tab with about:config and set security.tls.version.min to 1
 
 ## Software: Configuring the RFP
 
