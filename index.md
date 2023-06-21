@@ -285,6 +285,32 @@ host myfancyrfp {
 }
 ```
 
+Example snippet for `dnsmasq-dhcp-server`'s `dnsmasq.conf`:
+
+```
+#Not strictly need just makes dnsmasq ignore any wishes the rfp has.
+dhcp-authoritative
+#The RFP host definiton, MAC, IP, HOSTNAME
+dhcp-host=00:30:42:cc:23:42,192.168.42.23,myfancyrfp
+#The location of the leasefile
+dhcp-leasefile=/var/lib/dnsmasq/dnsmasq.leases
+#If a devices says in the dhcp discover packet, that it is from vendor OpenMobility* the dhcp server will set vendor specific options, which equals the code 43 from the dhcpd example, with the option code 10, and the IP adress. 
+#With out that the omm will just ignore the dhcp offer and send another discover packet. 
+#The 10 says hey you are running the omm now and the ip points the rfp to the omm. 
+#If you want to run the om on an other device you have to change the 10 with a 19, just like in the other example above.
+dhcp-option=vendor:OpenMobility,10,192.168.42.23
+#Defines the range of IP-Adresses handed out by dnsmasq with the subnet mask and lease time
+dhcp-range=192.168.42.2,192.168.42.254,255.255.255.0,12h
+#Interface to listen on
+interface=enp0s31f6
+#Disables dnsmasq on dns server
+port=0
+#DNS Server to use
+server=9.9.9.9
+server=149.112.112.112
+```
+
+
 The RFP will ignore DHCP offers that do not contain the `magic_str`. This means that (1) the magic string must be included in DHCP replies intended for RFPs, so (2) it may be possible to have two co-existing DHCP servers (one for normal devices and one for RFPs).
 
 ### OMM on RFP vs stand-alone OMM
@@ -293,7 +319,15 @@ The RFP will ignore DHCP offers that do not contain the `magic_str`. This means 
 
 ### Accessing the OMM
 
-*TODO*
+You can access the OMM with you browser for that go to the ip defined in your DHCP config.
+The default credentials are:
+```
+username: omm
+password: omm
+```
+
+A common problem you might experince is that the omm only supports tls version 1.1
+If you want to enable that in Firefox you can open a new tab with about:config and set security.tls.version.min to 1
 
 ## Software: Configuring the RFP
 
