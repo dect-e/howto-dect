@@ -107,7 +107,7 @@ generally a bad thing.
 Let's look at an overview (as of the release of SIP-DECT v8.0):
 
 |                | indoor, 4 speech channels | indoor, 8 speech channels                  | outdoor, 8 speech channels        | identification characteristic      |
-|----------------|---------------------------|--------------------------------------------|-----------------------------------|------------------------------------|
+| -------------- | ------------------------- | ------------------------------------------ | --------------------------------- | ---------------------------------- |
 | UpN (non-IP)   | -                         | 21, 22                                     | 23, 24                            | rectangular with protrusion, 1 LED |
 | 1st generation | -                         | 31 IP, 41 WLAN                             | 33 IP                             | smooth edges, no USB port, 1 LED   |
 | 2nd generation | -                         | 32 IP, 42 WLAN                             | 34 IP                             | smooth edges, no USB port, 4 LEDs  |
@@ -262,6 +262,20 @@ A message "&lt;Timestamp&gt; Configuration of &lt;MAC-Address&gt; successful" wi
 
 *TODO*
 
+
+Networks/IPs used in examples: 
+
+| Network/IP      | Usage            |
+| --------------- | ---------------- |
+| 10.10.10.0/24   | Network for DECT |
+| 10.10.10.1      | Gateway          |
+| 10.10.10.10     | OMM              |
+| 10.10.10.100    | DHCP-Range begin |
+| 10.10.10.199    | DHCP-Range end   |
+| 9.9.9.9         | DNS - Quad9      |
+| 149.112.112.112 | DNS - Quad9      |
+
+
 Example snippet for `isc-dhcp-server`'s `dhcpd.conf`:
 
 ```
@@ -275,12 +289,12 @@ option magic_str code 224 = text;
 
 host myfancyrfp {
     hardware ethernet 00:30:42:cc:23:42;
-    fixed-address 192.168.42.23;
+    fixed-address 10.10.10.10;
     option host-name "myfancyrfp";
     # run OMM on the RFP itself
-    option sipdect.ommip1 192.168.42.23;
+    option sipdect.ommip1 10.10.10.10;
     # or run OMM elsewhere (on a VM or other RFP)
-    #option sipdect.ommip1 192.168.42.193;
+    #option sipdect.ommip1 10.10.10.123;
     option magic_str = "OpenMobilitySIP-DECT";
 }
 ```
@@ -290,21 +304,28 @@ Example snippet for `dnsmasq-dhcp-server`'s `dnsmasq.conf`:
 ```
 #Not strictly need just makes dnsmasq ignore any wishes the rfp has.
 dhcp-authoritative
+
 #The RFP host definiton, MAC, IP, HOSTNAME
-dhcp-host=00:30:42:cc:23:42,192.168.42.23,myfancyrfp
+dhcp-host=00:30:42:cc:23:42,10.10.10.10,myfancyrfp
+
 #The location of the leasefile
 dhcp-leasefile=/var/lib/dnsmasq/dnsmasq.leases
+
 #If a devices says in the dhcp discover packet, that it is from vendor OpenMobility* the dhcp server will set vendor specific options, which equals the code 43 from the dhcpd example, with the option code 10, and the IP adress. 
 #With out that the omm will just ignore the dhcp offer and send another discover packet. 
 #The 10 says hey you are running the omm now and the ip points the rfp to the omm. 
 #If you want to run the om on an other device you have to change the 10 with a 19, just like in the other example above.
-dhcp-option=vendor:OpenMobility,10,192.168.42.23
+dhcp-option=vendor:OpenMobility,10,10.10.10.10
+
 #Defines the range of IP-Adresses handed out by dnsmasq with the subnet mask and lease time
-dhcp-range=192.168.42.2,192.168.42.254,255.255.255.0,12h
+dhcp-range=10.10.10.100,10.10.10.199,255.255.255.0,12h
+
 #Interface to listen on
 interface=enp0s31f6
+
 #Disables dnsmasq on dns server
 port=0
+
 #DNS Server to use
 server=9.9.9.9
 server=149.112.112.112
@@ -340,10 +361,10 @@ If you want to enable that in Firefox you can open a new tab with about:config a
 ### OMM Setup
 First, log in to the OMM by browsing the web interface, you might have to accept the self-signed certificate. After accepting the EULA, you will be asked to set passwords.
 
-| User   | Default Password | Description                                           |
-| ------ | ---------------- | ----------------------------------------------------- |
-| omm    | omm              | Web Interface, OMM Configrator, OMM Management Portal |
-| root   | -                | SSH access                                            |
+| User | Default Password | Description                                           |
+| ---- | ---------------- | ----------------------------------------------------- |
+| omm  | omm              | Web Interface, OMM Configrator, OMM Management Portal |
+| root | -                | SSH access                                            |
 
 ### System Settings
 
