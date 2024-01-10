@@ -120,7 +120,7 @@ IP: only contains a DECT base station
 WLAN: contains both a DECT base station and a WiFi AP  
 DRC: preinstalled with directional antennas in an outdoor enclosure
 
-You can see a 3rd gen (whose case is nearly identical to that of a 2nd gen) and
+You can see a 3rd gen (whose front looks almost identical to that of a 2nd gen, but has vents on the back) and
 a 4th gen RFP in [this photo by Eventphone][gen3-4-photo].
 
 [rfp35ip]: https://www.telefonanlage-shop.de/Aastra-EOL-END-OF-LIFE-TK-Systeme-DECT-Systeme-244/Aastra-RFP-35-IP-indoor-709#link_3
