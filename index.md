@@ -312,7 +312,7 @@ dhcp-authoritative
 dhcp-range=10.10.10.100,10.10.10.199,255.255.255.0,12h
 
 # static leases for RFPs
-# for every RFP, set a tag to choose on which tftp boot file to take (tags are definded below: rfp2g/rfp3g/rfp3g)
+# for every RFP, set a tag to choose on which tftp boot file to take (tags are definded below: rfp2g/rfp3g/rfp4g)
 dhcp-host=00:30:42:cc:23:42,set:rfp3g,10.10.10.10,rfp-1
 dhcp-host=00:30:42:cc:23:43,set:rfp2g,10.10.10.11,rfp-2
 dhcp-host=00:30:42:cc:23:44,set:rfp2g,10.10.10.12,rfp-3
