@@ -325,7 +325,8 @@ dhcp-option=vendor:OpenMobility,10,10.10.10.10
 # It might be possible to have co-existing DHCP servers where only the one responsible for RFPs sends the magic_str.
 dhcp-option=224,"OpenMobilitySIP-DECT"
 
-# set the tftp boot file name (option 67) depending on the tag set in the dhcp-host above
+# set the tftp server adress (option 150) and tftp boot file name (option 67) depending on the tag set in the dhcp-host above
+dhcp-option=150,10.10.10.1
 dhcp-option=tag:rfp2g,67,"iprfp2G.tftp"
 dhcp-option=tag:rfp3g,67,"iprfp3G.dnld"
 dhcp-option=tag:rfp4g,67,"iprfp4G.dnld"
