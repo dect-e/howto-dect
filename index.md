@@ -205,34 +205,34 @@ Gen 2 and 3 indoor RFPs also support direct DC power via an RJ11 connector:
 
 ### Software update
 
-While there are many ways to get the latest Firmware on your DECT RFP
+There are multiple ways to get the latest Firmware on your DECT RFP. (There are additional ways beside the ones described below.)
 
 #### Update via USB Flash drive
 
-This is the most easy option.
+This is the easiest option.
 
 1. Make sure the Flash Drive is formatted FAT32
 2. Copy the Firmware file onto the Drive
-3. Make sure it is named iprfp3G.dnld (for Gen. 3 RFPs) or iprfp4G.dnld (for Gen 4 RFPs)
+3. Make sure it is named iprfp3G.dnld (for Gen. 3 RFPs) or iprfp4G.dnld (for Gen. 4 RFPs)
 4. Connect the Flash drive to the RFP and reboot the RFP by switching off and on the 48V
-5. Wait for about 2 Minutes until the RFP signalizes successfull flashing by LED flashing
+5. Wait for about 2 minutes until the RFP signalizes successful flashing by flashing all LEDs in orange once
 
 #### Update via HTTP
 
 This method requires access to an existing webserver.
 
-1. Extract files iprfp3G.dnld (for Gen. 3 RFPs) or iprfp4G.dnld (for Gen 4 RFPs) on Your webserver
-2. Goto Your OMM's web interface, login and navigate to System/Provisioning & Software Update
+1. Extract files iprfp3G.dnld (for Gen. 3 RFPs) and/or iprfp4G.dnld (for Gen. 4 RFPs) on your webserver
+2. Go to your OMM's web interface, log in and navigate to System/Provisioning & Software Update
+	1. Enable Advanced (checkbox in the top right corner)
 3. Below "Software update URL"
-	1. Enable Advanced
-	2. Check from specific source
-	3. Fill in the url parts to point to the files from step 1
+	1. Check from specific source
+	2. Fill in the URL parts to point to the files from step 1 (as you can see from the form, the filename "iprfp3G.dnld" is appended automatically, so should not be part of your input)
 4. Below "System update"
 	1. In the trigger matrix check Software Update and set RFP Software to "M" in the manual trigger column
-	2. Goto the top of the page and click OK
+	2. Go to the top of the page and click OK
 5. If the settings are saved, scroll back down to "System update" and click the "Update" button.
 
-Now the RFP should download its dnld-file from the webserver You specified and reboot.
+Now the RFP should download its dnld file from the webserver you specified and reboot.
 
 ### Recovering a RFP with corrupted Firmware.
 
