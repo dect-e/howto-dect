@@ -531,3 +531,7 @@ example.
 
   - 3,3V Serial Console 
   - 115200 baud
+
+### Replacement Side Covers for Mitel Handsets
+Sticky side covers can be replaced by this print:
+https://www.printables.com/model/955543-mitel-600-side-cover-replacement
