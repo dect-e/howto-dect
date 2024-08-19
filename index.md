@@ -321,6 +321,27 @@ host myfancyrfp {
 }
 ```
 
+Example snippet for Mikrotik RouterOS:
+
+```
+/ip dhcp-server option
+add code=224 name=magic_str value="'OpenMobilitySIP-DECT'"
+# encapsulation 43, code 10 (0x0a), length 4 (0x04), 10.10.10.10 (0x0a0a0a0a)
+add code=43 name=ommip_1 value=0x0a040a0a0a0a
+# encapsulation 43, code 19 (0x13), length 4 (0x04), 10.10.10.11 (0x0a0a0a0b)
+add code=43 name=ommip_2 value=0x13040a0a0a0b
+# encapsulation 43, code 14 (0x0e), length 4 (0x04), 192.168.89.254 (0xc0a859fe)
+add code=43 name=syslogip value=0x0e040a0a0a0b
+# encapsulation 43, code 15 (0x0f), length 2 (0x02), 514 (0x0202)
+add code=43 name=syslogport value=0x0f020202
+
+/ip dhcp-server option sets
+add name=sipdect options=magic_str,ommip_1,ommip_2,syslogip,syslogport
+
+/ip dhcp-server
+add address-pool=default-dhcp dhcp-option-set=sipdect interface=bridge
+```
+
 Example snippet for `dnsmasq-dhcp-server`'s `dnsmasq.conf`:
 
 ```
