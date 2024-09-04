@@ -409,6 +409,9 @@ tftp-root=/srv/tftp
 
 *TODO*
 
+3rd- and 4th-generation RFPs can run in "OMM mode", i.e. they can run an OMM instance directly on the RFP hardware (in addition to providing DECT and/or WiFi service as usual).  
+2nd-generation RFPs cannot run an OMM on themselves; they require an external OMM (hosted on a server/VM or on a newer-generation RFP).
+
 ### Accessing the OMM
 
 You can access the OMM with you browser for that go to the ip defined in your DHCP config.
