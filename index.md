@@ -342,6 +342,21 @@ add name=sipdect options=magic_str,ommip_1,ommip_2,syslogip,syslogport
 add address-pool=default-dhcp dhcp-option-set=sipdect interface=bridge
 ```
 
+It is also possible to serve a firmware update file from RouterOS. However,
+current 3rd gen firmware files are around 18 MiB, so they won't fit into the
+flash of cheaper Mikrotik models, and will have to be uploaded to their ramdisk
+after every reboot (e.g. through the "Files" menu in Winbox, which uploads to
+the ramdisk if no flash-based directory is selected).
+
+```
+/ip dhcp-server network
+add address=192.168.89.0/24 dns-server=192.168.89.1 gateway=192.168.89.1 \
+     next-server=192.168.89.1 boot-file-name=iprfp3G.dnld
+
+/ip tftp
+add real-filename=iprfp3G_8.3.dnld req-filename=iprfp3G.dnld
+```
+
 Example snippet for `dnsmasq-dhcp-server`'s `dnsmasq.conf`:
 
 ```
