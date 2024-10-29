@@ -538,7 +538,7 @@ designs: [dect-e/rfp-mounting](https://github.com/dect-e/rfp-mounting)
 
 ### Disassembly
 
-#### Outdoor RFPs (e.g. 36/37)
+#### Gen. 3 Outdoor RFPs (e.g. 36/37)
 
 The water-resistant case unscrews with four Phillips screws, contains raw PCB,
 fastened with two Phillips screws:
@@ -547,7 +547,7 @@ fastened with two Phillips screws:
 [![RFP 37 PCB front](photos/rfp37-pcb-front.jpg)](photos/rfp37-pcb-front.jpg)
 [![RFP 37 PCB back](photos/rfp37-pcb-back.jpg)](photos/rfp37-pcb-back.jpg)
 
-#### Indoor RFPs (e.g. 43)
+#### Gen. 3 Indoor RFPs (e.g. 43)
 
 The case has three Torx T10 screws, two pairs of clips on each side, three
 single clips at the back (near the connectors).
@@ -555,6 +555,10 @@ single clips at the back (near the connectors).
 [![RFP 43 case interior](photos/thumbnails/rfp43-case-interior.jpg)](photos/rfp43-case-interior.jpg)
 [![RFP 43 main PCB and antenna](photos/thumbnails/rfp43-pcb-antenna.jpg)](photos/rfp43-pcb-antenna.jpg)
 [![RFP 43 main PCB](photos/thumbnails/rfp43-pcb.jpg)](photos/rfp43-pcb.jpg)
+
+#### Gen. 4 Indoor RFPs (e.g. 44)
+
+[![RFP 44 case interior](photos/thumbnails/rfp44-case-interior.jpg)](photos/rfp44-case-interior.jpg)
 
 ### RFP size
 
